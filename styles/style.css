@@ -19,10 +19,11 @@ header{
 }
 
 #main{
-	min-width: 100%;
+	width: 99%;
 	min-height: 82%;
-	margin: 10px 10px 0px 0px;
-	padding: 0px 0px 0px 10px;
+	margin: 10px auto;
+	padding: 0px 0px 0px 0px;
+	background: red;
 }
 
 #leftblok{
@@ -60,7 +61,7 @@ header{
 #content{
 	background: rgb(245,245,245);
 	float: left;
-	min-width: 60%;
+	width: 61%;
 	min-height: 82%;
 	margin: 0px 0px 0px 10px;
 	text-align: center;
@@ -68,7 +69,7 @@ header{
 
 #rightblok{
 	float: left;
-	width: 22.2%;
+	width: 22.4%;
 	min-height: 82%;
 	background: rgb(169,185,204);
 }
