@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create account</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="styles\style.css">
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<header>
+			<hgroup>
+			<h1>Payment system<a href="index.html" title="Sing in">Sing in</a></h1>
+			</hgroup>		
+		</header>
+		<div id="main">
+			<div id="login">
+				<form name="reg" action="create_account.html" method="post" >
+				<div id="label_create_account">
+				Create your personal account
+				<hr>
+				</div>
+				Username *<input type="text" name="username" placeholder="Your username"/>
+				Email address *<input type="text" name="email" placeholder="you@example.com"/>
+				Password *<input type="password" name="password_1" placeholder="*********"/>
+				Enter your password	again *<input type="password" name="password_2" placeholder="*********"/>
+				<p><input type="submit" name="button_reg" value="Create an account" class="button" onclick="checkauthform(reg);"></p>
+				<hr>
+				</form>
+				<p>* Filds, that are compulsory</p>
+			</div>
+		</div>
+		<footer>© Miss me? 2017</footer>
+	</body>
+</html>
