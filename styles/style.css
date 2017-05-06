@@ -40,7 +40,7 @@ header a:hover{
 
 #main{
 	width: 98.8%;
-	min-height: 82%;
+	min-height: calc(90vh - 110px);
 	margin: 10px 10px;
 	float: left;
 	/*background: red;*/
@@ -113,7 +113,7 @@ footer{
 	font-size: 15px;
 	text-align: left;
 	font-weight: bold;
-	color: rgb(148, 150, 156);
+	color: rgba(0,0,0,0.7);
 	background: rgb(239,239,247);
 }
 #login input{
@@ -177,4 +177,5 @@ form p{
 	text-align: center;
 	font-size: 16px;
 	font-weight: lighter;
+	color:black;
 }

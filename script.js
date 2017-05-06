@@ -1,24 +1,37 @@
 ﻿function checkauthform(obj) {
-	var user_name = obj.username.value;
+	var username = obj.username.value;
 	var email = obj.email.value;
-	var pass_word_1 = obj.password_1.value;
-	var pass_word_2 = obj.password_2.value;
+	var password_1 = obj.password_1.value;
+	var password_2 = obj.password_2.value;
     
-	var user_name_pattern = /[0-9a-z]+/;
-	var email_pattern = /[0-9a-z_]+@[0-9a-z_]+\.[a-z]{2,5}/;
-	var pass_word_pattern = /[0-9a-z]+/;
+	var username_pattern = /[0-9a-z]{4,20}/;
+	var email_pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+	var password_pattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,15}$/;
   
-	var valid = user_name_pattern.test(user_name);
+	var valid = username_pattern.test(username);
 	var valid1 = email_pattern.test(email);
-	var valid2 = pass_word_pattern.test(pass_word_1);
-  
-	if (valid &&  valid1 && valid2 && (obj.password_1.value == obj.password_2.value)) {
+	var valid2 = password_pattern.test(password_1);
+	
+	if (valid &&  valid1 && valid2 && (password_1 == password_2)) {
 		alert("Registeration is successfull!");
-		/*$('#login').hide();/*не працює*/
+		/*window.location.href = 'повний шлях/index.html';*/ /*redirect на сторінку index.html*/
 	}
 	else {
-        alert("Entered data are incorrect!");
-		/*$("#login :text, :password :enabled").css("color", "red");/*не працює*/
+        alert("Entered data is incorrect!");
+		/*$("#login :text, :password :enabled").css("color", "red");*//*не працює*/
+	}
+	if (!valid){
+		alert("Username is incorrect!");
+	}
+	if (!valid1) {
+		alert("Email is incorrect!");
+	}
+	
+	if (!valid2) {
+		alert("Password is incorrect!");
+	}
+	if (!(password_1 == password_2)){
+		alert("Passwords are not equal!");
 	}
 }
     
