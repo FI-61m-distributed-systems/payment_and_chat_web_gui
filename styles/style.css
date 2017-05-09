@@ -1,8 +1,8 @@
 ﻿body{
 	width: 100%;
 	height: 100%;
-	color:white;
-	font-family: Tahoma;
+	color: white;
+	font-family: sans-serif;
 	background: black;
 	margin: auto;
 }
@@ -49,49 +49,53 @@ header a:hover{
 #leftblok{
 	float: left;
 	min-width: 16%;
-	min-height: 82%;
+	/*min-height: calc(90vh - 110px);*/
+	/*background: rgb(169,185,204);*/
 	text-decoration: none;
-	background: rgb(169,185,204);
 }
 #leftblok li{
 	list-style-type:none;
 }
 #leftblok a{
 	display:block;
-	background-color:rgb(66,98,136);
-	border-bottom: 1px solid white;
-	border-left: 2px solid white;
-	border-radius: 0px 0px 0px 5px;
-	padding: 13px 0px 0px 0px;
-	margin: 2px 0px 0px 0px;
-	width: 163px;
-	height: 40px;
-	float:left;
+	background-color:rgba(255,255,255,0.1);
+	border-left: 1px solid white;
+	border-radius: 5px 5px 5px 5px;
+	padding: 10px 15px 0px 10px;
+	margin: 15px 10px 0px 0px;
+	width: 140px;
+	height: 28px;
+	float: left;
 	color: white;
-	text-decoration:none;
-	text-align:center;
-	font-size:16px;
-	letter-spacing: 2px;
+	text-decoration: none;
+	text-align: left;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-family: sans-serif;
 }
 #leftblok a:hover{
-	color:white;
-	background: rgb(169,185,204);
+	box-shadow: 0 0 10px rgba(0,0,0, .5);
+	background: rgb(90,120,153);
 }
 
 #content{
 	background: rgb(245,245,245);
 	float: left;
-	min-width: 61.6%;
-	min-height: 82%;
-	margin: 0px 0px 0px 0px;
-	text-align: center;
+	min-width: 60.4%;
+	height: calc(90vh - 110px);
+	margin: 0px 10px 10px 0px;
+	font-family: sans-serif;
+	color:black;
 }
 
 #rightblok{
 	float: left;
 	min-width: 22.4%;
 	min-height: 82%;
-	background: rgb(169,185,204);
+	padding-top: 10px;
+	margin: 0px 0px 10px 0px;	
+	font-family: sans-serif;
+	/*background: rgb(169,185,204);*/
 }
 
 footer{
@@ -103,6 +107,17 @@ footer{
 	background: rgb(83,115,153);
 	text-align: center;
 	font-weight: lighter;
+}
+
+.user{
+	margin-right: 2px;
+}
+.exit{
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-right: 20px;
+	border: 1px solid rgb(83,115,153);
+	font-weight: normal;
 }
 
 #login{
@@ -172,10 +187,125 @@ form p{
 	box-shadow:  inset 0 0 10px rgba(0,0,0, .5);
 }
 
-
 #label_create_account{
 	text-align: center;
 	font-size: 16px;
 	font-weight: lighter;
 	color:black;
 }
+
+#label_chat{
+	padding-left: 23px;
+	font-size: 18px;
+	color:white;
+}
+
+#chat_massage{
+	width: 270px;
+	margin: 10px auto;
+	padding: 1px 0px 1px 0px;
+	text-align: left; 
+	font-size: 14px;
+	color: rgba(0,0,0,0.7);
+	background: rgb(239,239,247);
+}
+#chat_massage ul{
+	list-style-type: none;
+	padding: 0px 10px 0px 10px;
+	margin-top: 10px;
+}
+#chat_massage li{
+	clear: both;
+	margin-top: -5px;
+	margin-bottom: -5px;
+	padding-top: 5px;
+	text-align: left;
+}
+#chat_username{
+	float:left;
+	min-width: 100px;
+	padding-left: 5px;
+	font-weight: bold;
+}
+#chat_time{
+	position: relative;
+	float: right;
+	font-size: 12px;
+	font-weight: normal;
+	color: grey;
+}
+
+#write_message{
+	margin: 10px auto;
+	text-align: center;
+}
+#write_message p{
+	margin: 0px 0px 0px 16px;
+	text-align: left;
+}
+.write_field{
+	width: 265px;
+	min-height: 20px;
+}
+.button_send{
+	width: 80px;
+	min-height: 30px;
+	border: none;
+	background: #488df5;
+	box-shadow: 0 0 10px rgba(0,0,0, .5), inset 0 0 10px rgba(0,0,0, .5);
+	cursor: pointer;
+	color: white;
+	font-size: 14px;
+ }
+.button_send:hover {
+	box-shadow:  inset 0 0 10px rgba(0,0,0, .3);
+}
+
+#content_header{
+	width: 100%;
+	/*min-height: 15%;*/
+	min-height: calc(11.5vh - 10px);
+	background: #DAE1E8;
+}
+#label_content{
+	float: left;
+	width: 200px;
+	margin: 20px 0px 0px 90px;
+	font-weight: bold;
+	font-size: 25px;
+	color: #2B587A;
+}
+
+#my_balance{
+	position: relative;
+	float:right;
+	width: 135px;
+	margin: 25px 50px 0px 0px;	
+}
+#amount{
+	float: right;
+	font-weight: bold;
+	color:rgb(209,72,54);
+}
+
+#content_main{
+	clear: both;
+	margin-top: -10px;
+	padding: 0px 10px 10px 10px;
+}
+#transaction{
+	width:500px;
+	min-height:50px;
+	margin: 10px auto;
+	padding: 10px 20px 20px 20px;
+	background:red;
+}
+#lable_transaction{
+	min-height: calc(5vh - px);
+	background: #DAE1E8;
+	margin-bottom:10px;
+	text-align: center;
+	font-size:19px;
+	color: #2B587A;
+}
+

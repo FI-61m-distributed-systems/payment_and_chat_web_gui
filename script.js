@@ -34,4 +34,22 @@
 		alert("Passwords are not equal!");
 	}
 }
-    
+
+function addMessage(){
+	var t = new Date();
+    var h = t.getHours();
+    var m = t.getMinutes();
+    var s = t.getSeconds();
+	var d = t.getDate();
+	var mn = t.getMonth()+1;
+	var y = t.getFullYear();
+    var result_time = h+":"+m+":"+s;
+	var result_date = d+"."+mn+"."+y;
+	var chat_massage=$('#user_text').val();
+    $('#list_messages').append('<div id = "chat_massage"><ul><li><div id="chat_username">'
+	+'Username'+'</div><div id="chat_time">'/*тут по сесії передаватиметься Username*/
+	+result_time+" "+result_date+'</div></li><li>'
+	+chat_massage+'</li></ul></div>');
+	/*$('#input: text').val()=0;*/
+	document.getElementById('user_text').value='';
+}
