@@ -4,8 +4,8 @@
 		<title>Payment system</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="styles\style.css">
-		<script src="script.js"></script>
 		<script src="jquery-1.2.6.js"></script>
+		<script src="script.js"></script>
 	</head>
 	<body>
 		<header>
@@ -24,17 +24,22 @@
 			<div id="content">
 				<div id="content_header">
 					<div id="label_content">My cabinet</div>
-					<div id="my_balance">My balance: <div id="amount">1000$</div></div>
+					<div id="my_balance">My balance: <div id="amount"><script>Show_amount()</script></div></div>
 				</div>
 				<div id="content_main">
 					<hr>
-					<!--тут буде робочий стіл користувача-->
+					
 				</div>
 			</div>
 			<div id= "rightblok">
 				<div id="label_chat">Chat</div>
 				<hr>
-				<!-- тут сервісна частина циклом for відображатиме список із всіх повідомлень -->
+				<!--<form name="send_message" action="" method="post" onsubmit="return send_messageform()";>-->
+					<div id="write_message">
+						<textarea type="text" id="user_text" placeholder="To write a message..." maxlength="255" rows="3" class="write_field"></textarea>
+						<p><input type="submit" name="button_send" value="Send" class="button_send" onclick="addMessage()"></p>
+					</div>
+				<!--</form>-->
 				<!-- шаблон для повідомлення -->
 				<div id="list_messages">
 					<div id="chat_massage">
@@ -44,10 +49,8 @@
 						</ul>
 					</div>
 				</div>
-				<div id="write_message">
-					<textarea type="text" id="user_text" placeholder="To write a message..." maxlength="255" rows="3" class="write_field"></textarea>
-					<p><input type="button" name="button_send" value="Send" class="button_send" onclick="addMessage();"></p>
-				</div>
+				<!-- -->
+			</div>
 		</div>
 		<footer>© Miss me? 2017</footer>
 	</body>

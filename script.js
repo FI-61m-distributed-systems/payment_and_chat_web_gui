@@ -1,4 +1,10 @@
-﻿function checkauthform(obj) {
+﻿/*$(document).ready(function(){$("#amount").append('1000$')});*/
+function Show_amount(){
+	var amount = /*Get_amount()*/'1000' + ' $'/*виклик ф-ї, що повертає суму коштів у форматі string*/;
+	document.write(amount);
+}
+
+function checkauthform(obj) {
 	var username = obj.username.value;
 	var email = obj.email.value;
 	var password_1 = obj.password_1.value;
@@ -45,11 +51,18 @@ function addMessage(){
 	var y = t.getFullYear();
     var result_time = h+":"+m+":"+s;
 	var result_date = d+"."+mn+"."+y;
-	var chat_massage=$('#user_text').val();
-    $('#list_messages').append('<div id = "chat_massage"><ul><li><div id="chat_username">'
-	+'Username'+'</div><div id="chat_time">'/*тут по сесії передаватиметься Username*/
-	+result_time+" "+result_date+'</div></li><li>'
-	+chat_massage+'</li></ul></div>');
-	/*$('#input: text').val()=0;*/
-	document.getElementById('user_text').value='';
+	var chat_massage = $('#user_text').val();
+	if (chat_massage != ""){
+		/*fun_add_Message()*/
+		var div_chat_massage = document.createElement('div');
+		div_chat_massage.innerHTML = '<div id = "chat_massage"><ul><li><div id="chat_username">'
+		+'Username'/*Get_username()*/+'</div><div id="chat_time">'/*тут по сесії передаватиметься Username*/
+		+result_time+" "+result_date+'</div></li><li>'
+		+chat_massage+'</li></ul></div>';
+		var list_messages = document.getElementById('list_messages');
+		var first = list_messages.firstChild;
+		list_messages.insertBefore(div_chat_massage,first);
+
+		document.getElementById('user_text').value='';}
+	/*else{ alert("Enter your message!");}*/
 }
