@@ -1,7 +1,37 @@
-﻿function Show_amount(){
-	var amount = /*Get_amount()*/'1000' + ' $'/*виклик ф-ї, що повертає суму коштів у форматі string*/;
-	document.write(amount);
+﻿function showAmount(){
+  $.ajax({  
+    url: "bloks/amount.php",
+    cache: false,
+    success: function(html){ 
+      $("#amount").html(html);      
+    }           
+});
 }
+
+function showMessages(){  
+  $.ajax({  
+    url: "bloks/messages.php",  
+    cache: false,  
+    success: function(html){  
+      $("#list_messages").html(html);  
+    }  
+  });  
+}
+
+$(document).ready(function(){  
+  showMessages(); 
+  showAmount();  
+  setInterval('showMessages()',1000);  
+  setInterval('showAmount()',1000);
+}); 
+
+$.ajax({
+  url: "user_cabinet.php",
+  success: function(){
+    $("#list_messages").append("<?php include 'bloks/messages.php';?>");
+  }
+});
+
 
 function checkauthform(obj) {
 	var username = obj.username.value;
@@ -41,27 +71,8 @@ function checkauthform(obj) {
 }
 
 function addMessage(){
-	var t = new Date();
-    var h = t.getHours();
-    var m = t.getMinutes();
-    var s = t.getSeconds();
-	var d = t.getDate();
-	var mn = t.getMonth()+1;
-	var y = t.getFullYear();
-    var result_time = h+":"+m+":"+s;
-	var result_date = d+"."+mn+"."+y;
 	var text_massage = $('#user_text').val();
 	if (text_massage != ""){
-		/*fun_add_Message()*/
-		var div_chat_massage = document.createElement('div');
-		div_chat_massage.innerHTML = '<div id = "chat_massage"><ul><li><div id="chat_username">'
-		+'Username'/*Get_username()*/+'</div><div id="chat_time">'/*тут по сесії передаватиметься Username*/
-		+result_time+" "+result_date+'</div></li><li>'
-		+text_massage+'</li></ul></div>';
-		var list_messages = document.getElementById('list_messages');
-		var first = list_messages.firstChild;
-		list_messages.insertBefore(div_chat_massage,first);
-
+		fun_add_Message();/*виклик ф-ї, що надсилає повідомлення до БД*/
 		document.getElementById('user_text').value='';}
-	/*else{ alert("Enter your message!");}*/
 }

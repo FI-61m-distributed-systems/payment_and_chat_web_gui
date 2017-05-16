@@ -1,4 +1,4 @@
 <?php 
 	/*session_start();*/
-	include "lib/functions.py";
+	/*include "lib/functions.py";*/
 ?>
