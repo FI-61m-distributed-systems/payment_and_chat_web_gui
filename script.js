@@ -1,4 +1,4 @@
-﻿function showAmount(){
+function showAmount(){
   $.ajax({  
     url: "bloks/amount.php",
     cache: false,

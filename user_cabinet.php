@@ -1,4 +1,4 @@
-﻿<?php include "start.php";?>
+<?php include "start.php";?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,7 +11,10 @@
 	<body>
 		<header>
 			<hgroup>
-			<h1>Payment system<a href="index.php" class="exit">Log out</a><a href="" action="" class="user">User</a></h1>
+			<h1>Payment system
+        <a action="logout.php" href="index.html" class="logout">Log out</a>
+        <a href="" action="" class="user"><?php echo $_SESSION["email"]?></a>
+      </h1>
 			<!-- вище, замість User, по сесії передаватиметься Username -->
 			</hgroup>		
 		</header>

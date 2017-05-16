@@ -1,4 +1,4 @@
-﻿body{
+body{
 	width: 100%;
 	height: 100%;
 	color: white;
@@ -119,7 +119,7 @@ footer{
 .user{
 	margin-right: 2px;
 }
-.exit{
+.logout{
 	padding-left: 0px;
 	padding-right: 0px;
 	margin-right: 20px;
