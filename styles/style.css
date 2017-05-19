@@ -43,7 +43,6 @@ header a:hover{
 	min-height: calc(90vh - 110px);
 	margin: 10px 10px;
 	float: left;
-	/*background: red;*/
 }
 
 #leftblok{
@@ -95,7 +94,7 @@ header a:hover{
 	padding-top: 5px;
 	margin: 0px 0px 0px 0px;	
 	font-family: sans-serif;
-	/*background: rgb(169,185,204);*/
+  
 }
 
 #rightblok form{
@@ -262,7 +261,7 @@ form p{
 	text-align: left;
 }
 .write_field{
-	width: 265px;
+	width: 268px;
 	min-height: 20px;
 }
 .button_send{
@@ -310,7 +309,9 @@ form p{
 	clear: both;
 	margin-top: -10px;
 	padding: 0px 10px 10px 10px;
+  text-align: center; 
 }
+
 #transaction{
 	width:500px;
 	min-height:50px;

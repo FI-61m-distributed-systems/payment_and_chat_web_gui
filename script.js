@@ -1,20 +1,20 @@
 function showAmount(){
-  $.ajax({  
-    url: "bloks/amount.php",
-    cache: false,
-    success: function(html){ 
-      $("#amount").html(html);      
-    }           
-});
+   $.ajax({  
+      url: "blocks/amount.php",
+      cache: false,
+      success: function(html){ 
+         $("#amount").html(html);      
+      }           
+   });
 }
 
 function showMessages(){  
-  $.ajax({  
-    url: "bloks/messages.php",  
-    cache: false,  
-    success: function(html){  
-      $("#list_messages").html(html);  
-    }  
+   $.ajax({  
+      url: "blocks/messages.php",  
+      cache: false,  
+      success: function(html){  
+         $("#list_messages").html(html);  
+      }  
   });  
 }
 
@@ -25,12 +25,15 @@ $(document).ready(function(){
   setInterval('showAmount()',1000);
 }); 
 
-$.ajax({
+function getAmount(){
+   return 200;
+}
+/*$.ajax({
   url: "user_cabinet.php",
   success: function(){
     $("#list_messages").append("<?php include 'bloks/messages.php';?>");
   }
-});
+});*/
 
 
 function checkauthform(obj) {
@@ -49,11 +52,9 @@ function checkauthform(obj) {
 	
 	if (valid &&  valid1 && valid2 && (password_1 == password_2)) {
 		alert("Registeration is successfull!");
-		/*window.location.href = 'повний шлях/index.html';*/ /*redirect на сторінку index.html*/
 	}
 	else {
-        alert("Entered data is incorrect!");
-		/*$("#login :text, :password :enabled").css("color", "red");*//*не працює*/
+    alert("Entered data is incorrect!");
 	}
 	if (!valid){
 		alert("Username is incorrect!");
@@ -70,9 +71,32 @@ function checkauthform(obj) {
 	}
 }
 
+function checktransactform(obj){
+  var receiver = obj.receiver.value;
+	var amount = obj.amount.value;
+  var receiver_pattern = /[0-9a-z]{4,20}/;
+  var amount_pattern = /[0-9]/;
+  var valid = receiver_pattern.test(receiver);
+	var valid1 = amount_pattern.test(amount);
+  if (valid &&  valid1) {
+		alert("Transaction is successfull!");
+    obj.receiver.value = '';
+    obj.amount.value = '';
+	}
+  else if(!valid)
+  {
+    alert("Receiver is incorrect!");
+  }
+  else if(!valid1)
+  {
+    alert("Amount is incorrect!");
+  }
+}
+
 function addMessage(){
 	var text_massage = $('#user_text').val();
 	if (text_massage != ""){
 		fun_add_Message();/*виклик ф-ї, що надсилає повідомлення до БД*/
-		document.getElementById('user_text').value='';}
+		document.getElementById('user_text').value='';
+   }
 }
