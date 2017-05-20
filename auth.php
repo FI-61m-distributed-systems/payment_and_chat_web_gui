@@ -2,11 +2,11 @@
    session_start();
    include "blocks/functions.php";
    $email = htmlspecialchars($_POST["email"]);
-   $password = htmlspecialchars($_POST["password"]);
-   $password = md5($password);
-
+   $password = md5(htmlspecialchars($_POST["password"]));
+   
    if(chekUser($email,$password)) {
       $_SESSION["email"] = $email;
+      $_SESSION["username"] = getUsername($email);
    }
    else {
       $_SESSION["error_auth"] = 1;

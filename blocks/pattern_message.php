@@ -7,5 +7,5 @@
 		<li>
          <?php echo $text_message; ?>
       </li>
-	</ul>
+   </ul>
 </div>
