@@ -14,7 +14,7 @@
 		<header>
 			<hgroup>
             <h1>Payment system
-               <a action="logout.php" href="index.html" class="logout">Log out</a>
+               <a action="logout.php" href="index.php" class="logout">Log out</a>
                <a href="" action="" class="user"><?php echo $_SESSION["username"]?></a>
             </h1>
          </hgroup>		
@@ -40,7 +40,7 @@
                   <br>
                   <p>Amount: <input type="text" name ="money" size="10" placeholder="Enter amount..."></p>
                   <br>
-                  <input type="button" value="Submit" class="" onClick="checktransactform(transaction)">
+                  <input type="button" value="Submit" class="" onClick="checkTransactform(transaction)">
                   <input type="reset" value="Cencel">
                </form>
             </div>
