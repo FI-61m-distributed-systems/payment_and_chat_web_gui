@@ -33,37 +33,63 @@ $(document).ready(function(){
    }
 });*/
 
-function checkusername(username){
+function check_username(username){
    var username_pattern = /[0-9a-z]{4,20}/;
    return username_pattern.test(username);
 }
 
-function checkauthform(obj) {
+function check_password(password_){
+   var password_pattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,15}$/;
+   return password_pattern.test(password_);
+}
+
+function check_email(email){
+   var email_pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+   return email_pattern.test(email);
+}
+
+function checkAuthform(obj) {
+	var valid_email = check_email(obj.email.value);
+	var valid_password = check_password(obj.password_.value);
+   
+   var message = '';
+	if (!valid_email) {
+      message = message +"Email is incorrect!\n";
+   }
+	if (!valid_password) {
+      message = message +"Password is incorrect!\n";
+   }
+	if (valid_email && valid_password) {
+		alert("Authentification is uccessfull!");
+   }
+   else {
+      alert("Entered data is incorrect: \n" + message);
+   }
+}
+
+function checkRegform(obj) {
    var password_1 = obj.password_1.value;
 	var password_2 = obj.password_2.value;
    
-	var email_pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-	var password_pattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,15}$/;
-   
-	var valid = checkusername(obj.username.value);
-	var valid1 = email_pattern.test(obj.email.value);
-	var valid2 = password_pattern.test(password_1);
+	var valid_username = check_username(obj.username.value);
+	var valid_email = check_email(obj.email.value);
+	var valid_password = check_password(password_1);
 	
    var message = '';
    
-   if (!valid){
+   if (!valid_username){
 		message = message +"Username is incorrect!\n";
    }
-	if (!valid1) {
+	if (!valid_email) {
       message = message +"Email is incorrect!\n";
    }
-	if (!valid2) {
+	if (!valid_password) {
       message = message +"Password is incorrect!\n";
    }
 	if (!(password_1 == password_2)){
       message = message +"Passwords are not equal!\n";
    }
-	if (valid &&  valid1 && valid2 && (password_1 == password_2)) {
+	if (valid_username &&  valid_email && valid_password && (password_1 == password_2)) {
 		alert("Registeration is successfull!");
    }
    else {
@@ -72,20 +98,20 @@ function checkauthform(obj) {
 	
 }
 
-function checktransactform(obj){
+function checkTransactform(obj){
    var money_pattern = /[0-9]/;
-   var valid = checkusername(obj.receiver.value);
-	var valid1 = money_pattern.test(obj.money.value);
-   if (valid &&  valid1) {
+   var valid_username = checkusername(obj.receiver.value);
+	var valid_money = money_pattern.test(obj.money.value);
+   if (valid_username &&  valid_money) {
       alert("Transaction is successfull!");
       obj.receiver.value = '';
       obj.money.value = '';
    }
-   else if(!valid)
+   else if(!valid_username)
    {
       alert("Receiver is incorrect!");
    }
-   else if(!valid1)
+   else if(!valid_money)
    {
       alert("Amount is incorrect!");
    }
