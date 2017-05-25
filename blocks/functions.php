@@ -11,9 +11,25 @@
       array('Андрей', 'Привіт!', '00:00:02 01.01.17'));
    } 
    
-   function chekUser($email,$password){
-      /*$chek = тут буде HTTP запит*/
-      return true;
+   function checkUser($email,$password){
+      $postdata = http_build_query(
+      array(
+      'var1' => $email,
+      'var2' => $password,
+      )
+      );
+      
+      $opts = array('http' =>
+      array(
+      'method'  => 'POST',
+      'header'  => 'Content-type: text',
+      'content' => $postdata
+      )
+      );
+      
+      $context = stream_context_create($opts);
+      $result = file_get_contents('http://localhost/', false, $context);/*можливо буде щось інше, замість file_get_contents*/
+      return $result;
    }
    
    function sendMessage($username,$user_text,$time) {
@@ -34,12 +50,26 @@
       );
       
       $context = stream_context_create($opts);
-      
-      $result = file_get_contents('http://адреса_сервера_отримувача', false, $context);
+      $result = file_get_contents('http://localhost/', false, $context);
    }
    
    function getUsername($email){
-      /*тут буде HTTP запит*/
-      return "User_name";
+      $postdata = http_build_query(
+      array(
+      'var1' => $email
+      )
+      );
+      
+      $opts = array('http' =>
+      array(
+      'method'  => 'POST',
+      'header'  => 'Content-type: text',
+      'content' => $postdata
+      )
+      );
+      
+      $context = stream_context_create($opts);      
+      $result = file_get_contents('http://localhost/', false, $context);
+      return $result='User_name';
    }
 ?>

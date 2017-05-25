@@ -4,7 +4,7 @@
    $email = htmlspecialchars($_POST["email"]);
    $password = md5(htmlspecialchars($_POST["password"]));
    
-   if(chekUser($email,$password)) {
+   if(checkUser($email,$password)) {
       $_SESSION["email"] = $email;
       $_SESSION["username"] = getUsername($email);
    }
