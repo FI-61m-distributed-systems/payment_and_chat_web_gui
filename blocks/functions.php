@@ -1,4 +1,9 @@
 <?php 
+   function getScore(){
+      /*тут буде HTTP запит*/
+      return 2048;
+   }
+   
    function getMoney(){
       /*($amount =)тут буде HTTP запит*/
       return 200;

@@ -18,11 +18,23 @@ function showMessages(){
    });  
 }
 
+function showScore(){
+   $.ajax({  
+      url: "blocks/score.php",
+      cache: false,
+      success: function(html){ 
+         $("#score").html(html);      
+      }           
+   });
+}
+
 $(document).ready(function(){  
    showMessages(); 
    showMoney();  
+   showScore();
    setInterval('showMessages()',1000);  
    setInterval('showMoney()',1000);
+   setInterval('showScore()',1000);
 });
 
 
