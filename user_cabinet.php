@@ -23,7 +23,7 @@
 			<div id="leftblok">
 				<ul>
 					<li><a href="user_cabinet.php" title="Головна">My cabinet</a></li>																																																				
-					<li><a href="game.html">Game</a></li>
+					<li><a href="game.php">Game</a></li>
             </ul>
          </div>
 			<div id="content">
@@ -47,8 +47,8 @@
          </div>
          
          <div id= "rightblok">
-            <div id="label_chat">Chat</div>
-            <hr>
+         <div id="label_chat">Chat</div>
+         <hr>
          <form name="send_message" action="" method="post" onsubmit="">
          <div id="write_message">
          <textarea type="text" id="user_text" name="user_text" placeholder="To write a message..." maxlength="255" rows="3" class="write_field"></textarea>

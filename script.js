@@ -18,11 +18,23 @@ function showMessages(){
    });  
 }
 
+function showBlock(){
+   $.ajax({  
+      url: "blocks/blocks.php",
+      cache: false,
+      success: function(html){ 
+         $("#grid-container").html(html);      
+      }           
+   });
+}
+
 $(document).ready(function(){  
    showMessages(); 
    showMoney();  
+   showBlock();
    setInterval('showMessages()',1000);  
    setInterval('showMoney()',1000);
+   setInterval('showBlock()',100);
 });
 
 
@@ -94,14 +106,29 @@ function checktransactform(obj){
 function sendMessage(){
 	var text_massage = $('#user_text').val();
 	if (text_massage != ""){
-      $.ajax({  
-         url: "blocks/sendmessage.php",
-         cache: false,
-         success: function(){ 
-            alert("Message is send!"); 
-         }           
-      });
+      alert("Message is send!");
       showMessages();
       document.getElementById('user_text').value='';
    }
 }
+
+$(document).ready(function(){
+   $(window).keyup(function (event) {
+      if ( event.keyCode == 37 ) {
+         showBlock();
+         alert("Left");
+      }
+      if ( event.keyCode == 38 ) {
+         showBlock();
+         alert("Top");
+      }
+      if ( event.keyCode == 39 ) {
+         showBlock();
+         alert("Right");
+      }
+      if ( event.keyCode == 40 ){
+         showBlock(); 
+         alert("Bottom");
+      }
+   });
+});
