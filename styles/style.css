@@ -351,7 +351,7 @@ form p{
 	color:rgb(209,72,54);
 }
 
-.grid-container {
+#grid-container {
    position: relative;
    margin: 0px 262px;
    text-align: center;
@@ -376,4 +376,30 @@ form p{
 
 #rules{
    clear: both;
+}
+
+#bottons {
+   margin-bottom: 10px;
+   content: "";
+   display: block;
+   clear: both;
+}
+
+.button_reset{
+   display: block;
+   clear: both;
+	width: 80px;
+	min-height: 15px;
+   padding: 3px 5px 3px 5px;
+   margin: 70px 0px 20px 350px;
+	border: none;
+	background: rgb(209,72,54);
+	box-shadow: 0 0 10px rgba(0,0,0, .5), inset 0 0 10px rgba(0,0,0, .5);
+	cursor: pointer;
+	color: white;
+	font-size: 14px;
+   text-decoration: none;
+}
+.button_reset:hover {
+	box-shadow:  inset 0 0 10px rgba(0,0,0, .3);
 }
